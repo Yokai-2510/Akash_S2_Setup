@@ -1,0 +1,79 @@
+{
+  "universe": {
+    "etfs_to_track": [
+      "NIFTYBEES",
+      "BANKBEES",
+      "GOLDBEES",
+      "JUNIORBEES",
+      "ITBEES",
+      "SILVERBEES",
+      "MON100",
+      "CPSEETF",
+      "DIVOPPBEES"
+    ],
+    "timeframes": ["1h", "1d", "1W"],
+    "primary_timeframe": "1W"
+  },
+
+  "indicators": {
+    "enabled_indicators": [
+      {"name": "ema", "params": {"length": 50}},
+      {"name": "ema", "params": {"length": 200}},
+      {"name": "vwma", "params": {"length": 20}},
+      {"name": "rsi", "params": {"length": 14}},
+      {"name": "tsi", "params": {"fast": 25, "slow": 13, "signal": 7}},
+      {"name": "atr", "params": {"length": 14}},
+      {"name": "bbands", "params": {"length": 20, "std": 2.0}}
+    ]
+  },
+
+  "allocation_rules": {
+    "s2_target_percent": 34.0,
+    "weeks_to_glide": 52,
+    "enable_carry_forward": true,
+    "weekly_transfer_cap_percent": 5.0,
+    "s2_weekly_budget_cap_percent": 1.25
+  },
+
+  "risk_controls": {
+    "drift_band_percent": 10.0,
+    "core_floor_percent": 70.0,
+    "default_atr_ceiling_percent": 2.0,
+    "single_etf_max_percent": 35.0,
+    "max_trim_per_etf_percent": 25.0,
+    "weekly_harvest_cap_percent": 12.0
+  },
+
+  "health_gates": {
+    "required_score": 4,
+    "gate_1_tsi_above_signal": true,
+    "gate_2_rsi_above_50": true,
+    "gate_3_vwma_slope_positive": true,
+    "gate_4_atr_below_ceiling": true
+  },
+
+  "harvest_triggers": {
+    "h1_stretch": {
+      "enabled": true,
+      "rsi_threshold": 70,
+      "trim_percent": 10.0
+    },
+    "h2_volspike": {
+      "enabled": true,
+      "atr_percentile": 80,
+      "lookback_weeks": 26,
+      "trim_percent": 15.0
+    },
+    "h3_breakdown": {
+      "enabled": true,
+      "trigger": "tsi_cross_down",
+      "trim_percent": 15.0
+    }
+  },
+
+  "execution_params": {
+    "gtt_entry_atr_multiplier": 0.5,
+    "gtt_validity_days": 7,
+    "round_down_units": true
+  }
+}

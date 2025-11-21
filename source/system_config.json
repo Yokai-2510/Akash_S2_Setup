@@ -1,0 +1,61 @@
+{
+  "system": {
+    "project_name": "S2 Trading System",
+    "version": "2.0",
+    "log_level": "INFO",
+    "execution_mode": "single_run",
+    "data_source_mode": "local_excel",
+    "create_missing_local_excel": true
+  },
+ 
+  "debug_controls": {
+    "force_fresh_login": false,
+    "force_nse_refresh": false,
+    "force_ohlcv_resync": false,
+    "force_indicator_recalc": false,
+    "enable_playwright_headless": true,
+    "save_raw_api_responses": false,
+    "mock_mode": false
+  },
+  "data_urls": {
+    "nse_api_url": "https://www.nseindia.com/api/etf",
+    "upstox_instruments_url": "https://assets.upstox.com/market-quote/instruments/exchange/complete.json.gz",
+    "upstox_historical_api": "https://api.upstox.com/v3/historical-candle",
+    "upstox_login_dialog": "https://api-v2.upstox.com/login/authorization/dialog",
+    "upstox_token_api": "https://api-v2.upstox.com/login/authorization/token"
+  },
+  "data_acquisition": {
+    "full_history_start_date": "2022-01-01",
+    "api_fetch_chunk_days": 28,
+    "api_rate_limit_delay_seconds": 0.5,
+    "max_retries": 3,
+    "request_timeout_seconds": 30
+  },
+  "cache_policies": {
+    "instrument_master_cache_days": 7,
+    "access_token_expiry_time": "03:30:00",
+    "ohlcv_incremental_sync": true,
+    "indicator_snapshot_cache_hours": 24
+  },
+  "fallback_behavior": {
+    "nse_failure": "use_upstox_only",
+    "upstox_failure": "abort_pipeline",
+    "single_etf_failure": "skip_and_continue",
+    "indicator_calc_failure": "skip_etf"
+  },
+  "paths": {
+    "credentials_file": "source/credentials.json",
+    "token_cache_file": "source/access_token.json",
+    "state_cache_file": "source/state_cache.json",
+    "instrument_master_file": "source/data/etf_instrument_master.csv",
+    "ohlcv_data_dir": "source/etf_ohlcv_data",
+    "indicator_history_file": "source/data/indicator_data.parquet",
+    "log_file": "logs/trading_system.log",
+    "local_excel_file": "source/S2_Trading_Workbook_Local.xlsx"
+  },
+  "google_sheets": {
+    "spreadsheet_id": "YOUR_GOOGLE_SHEET_ID_GOES_HERE",
+    "poll_interval_seconds": 30,
+    "connection_timeout_seconds": 10
+  }
+}

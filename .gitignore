@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.vscode/
+.venv/
+venv/
+
+logs/
+cache/
+
+source/access_token.json
+source/credentials.json
+source/data/
+source/etf_ohlcv_data/
+
+*.xlsx
+*.csv
