@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "S2_Rebuilt_Part1_Narrative_Edition.md",
+                "file": "S2 Summary.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "S2_Rebuilt_Part1_Narrative_Edition"
+              "title": "S2 Summary"
             }
           }
         ]
@@ -172,9 +172,9 @@
   "active": "8ef5810d90671ea8",
   "lastOpenFiles": [
     "Modular Design Document.md",
+    "S2_Rebuilt_Part1_Narrative_Edition.md",
     "S2 Summary.md",
     "phase3_design.md",
-    "S2_Rebuilt_Part1_Narrative_Edition.md",
     "S2_Rebuilt_Part2_Narrative_Edition.md",
     "S2_Rebuilt_Part3_Narrative_Edition.md",
     "Categorized_Indicator_Library_With_Patterns.md",

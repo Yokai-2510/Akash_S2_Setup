@@ -10,7 +10,7 @@ import pandas as pd
 import pandas_ta as ta
 import json
 import os
-import datetime
+from datetime import datetime
 from tqdm import tqdm
 from typing import Dict, Any, List
 from utils.logger import setup_logger
